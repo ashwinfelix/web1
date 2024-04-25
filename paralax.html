@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling </title>
+</head>
+<style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body{
+        min-height: 100vh;
+        background: linear-gradient(#2b1055,#7597de);
+        overflow-x: hidden;
+    }
+
+    header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10000;
+    }
+
+    header .logo
+    {
+        color: #ffff;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    header ul
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    header ul li{
+        list-style: none;
+        margin-left: 20px;
+    }
+
+    header ul li a{
+        text-decoration: none;
+        padding: 6px 15px;
+        color: #ffff;
+        border-radius: 20px;
+    }
+
+    header ul li a:hover ,
+    header ul li a.active
+    {
+        background: #ffff;
+        color: #2b1055;
+    }
+
+    section{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+    }
+
+    section::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background:  linear-gradient(to top,#1c0522,transparent);
+        z-index: 1000;
+    }
+
+    section img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+
+    }
+
+    section img#moon
+    {
+        mix-blend-mode: screen;
+    }
+
+    section img#mountains_front
+    {
+        z-index: 10;
+    }
+
+    #text
+    {
+        position: absolute;
+        right: -350px;
+        color: #ffff;
+        white-space: nowrap;
+        font-size: 7.5vw; 
+        z-index: 9;
+       
+
+    }
+
+    #btn
+    {
+        text-decoration: none;
+        display: inline-block;
+        padding: 8px 30px;
+        border-radius: 40px;
+        background: #ffff;
+        color: #2b1055;
+        font-size:1.5em;
+        z-index: 9;
+        transform: translateY(100px);
+    }
+
+    .sec
+    {
+        position: relative;
+        padding: 100px;
+        background: #1c0522;
+        
+    }
+
+    .sec h2{
+        font-size: 3.5em;
+        margin-bottom: 10px;
+        color: #ffff;
+
+    }
+
+    .sec p
+    {
+        font-size: 1em;
+        color: #ffff;
+    }
+</style>
+<body>
+    <header>
+        <a href = "#" class = "logo">Ash DEV</a>
+        <ul>
+            <li><a href = "play.html" class = "active">Play</a></li>
+            <li><a href = "#sec">About</a></li>
+            <li><a href = "#sec1">Functionalities</a></li>
+            <li><a href = "#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src = "stars.png" id = "stars">
+        <img src = "moon.png" id = "moon">
+        <img src = "mountains_behind.png" id = "mountains_behind">
+        <h2 id = "text">Game Dev</h2>
+        <a href = "#sec" id = "btn">Explore</a>
+        <img src = "mountains_front.png" id = "mountains_front">
+
+    </section>
+
+    <div class = "sec" id = "sec">
+        <h2>About The Project</h2>
+        <p>This portfolio encompasses two captivating web applications: a dynamic Rock-Paper-Scissors game and an immersive landing site featuring stunning parallax scrolling effects. The Rock-Paper-Scissors game, meticulously crafted with HTML, CSS, and JavaScript, offers users an engaging and interactive experience. Its HTML structure provides the foundation for the game layout, while CSS styles elevate the visual appeal with carefully curated design elements and fluid animations. The JavaScript logic drives the game mechanics, enabling users to select their choices and dynamically determine winners. Through seamless integration of front-end technologies, the game delivers a delightful user experience that is both entertaining and intuitive.<br>
+            In contrast, the landing site exemplifies the power of modern web design techniques, leveraging HTML, CSS, and JavaScript to create an immersive and visually captivating experience. The parallax scrolling effect, a hallmark of the site's design, is achieved through intricate JavaScript manipulation of background elements. As users scroll down the page, background components such as stars, moon, and mountains gracefully shift at varying speeds, imparting a mesmerizing sense of depth and movement. This meticulous attention to detail extends to every aspect of the site, from the sleek typography and vibrant color palette to the seamless navigation and intuitive layout.<br>
+            Together, these projects showcase the versatility and creativity inherent in web development. They exemplify the fusion of artistry and technology, where code becomes a medium for delivering engaging and immersive digital experiences. Whether engaging in a friendly game of Rock-Paper-Scissors or embarking on a visual journey through a parallax-infused landscape, users are treated to an unforgettable exploration of the possibilities offered by the modern web.
+        
+        </p>
+    </div>
+
+    <div class = "sec" id = "sec1">
+        <h2>Functionalities</h2>
+        <p>
+            <span style="color: red;">Rock-Paper-Scissors Game:<br></span>
+User Interaction: Users can engage in a classic game of Rock-Paper-Scissors directly within the browser interface.<br>
+Choice Selection: Players can select their choice of Rock, Paper, or Scissors by clicking on the corresponding images.<br>
+Dynamic Results: The game dynamically determines the winner between the user and the CPU based on their choices.<br>
+Visual Feedback: Visual feedback is provided through animated transitions and result display, enhancing the user experience.<br>
+Responsive Design: The game interface is responsive, ensuring compatibility across various devices and screen sizes.<br>
+<span style="color: red;">Landing Site with Parallax Scrolling:</span><br>
+Immersive Experience: The landing site offers an immersive experience with visually captivating parallax scrolling effects.<br>
+Depth Perception: Background elements such as stars, moon, and mountains move at different speeds, creating a sense of depth and dimensionality.<br>
+Visual Appeal: The site boasts sleek typography, vibrant color schemes, and carefully curated design elements to captivate users.<br>
+Seamless Navigation: Users can seamlessly navigate through the site, exploring content with intuitive scrolling and interactive elements.<br>
+Responsive Design: The site is optimized for responsiveness, ensuring optimal viewing and interaction across a range of devices and screen sizes.
+
+    </div>
+
+    <div id ="contact"></div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let mountains_front = document.getElementById('mountains_front');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let header = document.querySelector('header');
+
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 3 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>

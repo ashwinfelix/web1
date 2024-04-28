@@ -158,6 +158,32 @@
         font-size: 1em;
         color: #ffff;
     }
+
+  
+
+    #contact input{
+        width: 200px;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid #777777;
+        margin-bottom: 20px;
+        outline: none;
+    }
+
+    .btn1{
+        border: none !important;
+        cursor: pointer;
+        background-color: #32cd9c;
+        font-size: 16px;
+        width: 23.5%;
+        padding: 14px;
+
+    }
+
+    .btn1:hover{
+        background-color: #1f7d5f;
+        color: white;
+    }
 </style>
 <body>
     <header>
@@ -166,7 +192,7 @@
             <li><a href = "play.html" class = "active">Play</a></li>
             <li><a href = "#sec">About</a></li>
             <li><a href = "#sec1">Functionalities</a></li>
-            <li><a href = "#">Contact</a></li>
+            <li><a href = "#contact">Contact</a></li>
         </ul>
     </header>
     <section>
@@ -206,7 +232,20 @@ Responsive Design: The site is optimized for responsiveness, ensuring optimal vi
 
     </div>
 
-    <div id ="contact"></div>
+    <div class = "sec" id ="contact">
+        <h2>
+            Get in Touch
+        </h2>
+        <form onsubmit="emailsend; reset(); return false;">
+            <input type = "text" id = "name" placeholder="name" name = "name" required>
+            <input type = "text" id = "phone" placeholder="phone" name ='phone' required>
+            <input type = "email" id = "email" placeholder="email" name = "email" required><br>
+            <button type = 'submit' class = "btn1">Submit</button>
+
+
+        
+        </form>
+    </div>
 
     <script>
         let stars = document.getElementById('stars');
@@ -229,6 +268,27 @@ Responsive Design: The site is optimized for responsiveness, ensuring optimal vi
             btn.style.marginTop = value * 1.5 + 'px';
             header.style.top = value * 0.5 + 'px';
         })
+
+        function emailSend(){
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "ashwinfelixmanoj@gmail.com",
+    Password : "3C36049225FBB40A24BC87AEFEF898664B20",
+    To : 'ashwin.mfelix2022@vitstudent.ac.in',
+    From : "ashwinfelixmanoj@gmail.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+
+
+        }
+
     </script>
+    
+    
+    <script src="https://smtpjs.com/v3/smtp.js">
+</script>
 </body>
 </html>
